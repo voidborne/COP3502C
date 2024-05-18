@@ -1,8 +1,7 @@
 '''
-Module 1 - Lecture 1 Notes 
-Description: Examples and notes from class
-Author: Garry Scott
-Date: 2024-05-15
+Garry Scott
+05/15/2024
+First Program
 '''
 
 '''
