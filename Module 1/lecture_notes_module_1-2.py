@@ -1,3 +1,12 @@
+'''
+Module 1 - Lecture Notes 2 
+Description: Examples and notes from class
+Author: Garry Scott
+Date: 2024-05-17
+'''
+
+
+
 var = 'Garry'
 var2 = 32
 

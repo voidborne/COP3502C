@@ -1,5 +1,5 @@
 '''
-Module 1 - Lecture 1 Notes 
+Title: Example Project
 Description: Examples and notes from class
 Author: Garry Scott
 Date: 2024-05-15
