@@ -56,14 +56,15 @@ def fetch_data(url: str) -> dict:
 def main():
 
     # Print a greeting message
-    print('Hello World\n')
+    print('Hello World.\n')
 
     # Print a message with nested quotes
-    print('''They said, "It's raining".''')
+    print('''They said, "It's raining" today.\n''')
 
     # Assign a string to a variable and print it
     my_name = 'Garry Scott'
-    print(f'\nMy name is: {my_name}\n')
+    
+    print(f'My name is {my_name}.\n\n')
 
     # Perform basic arithmetic operations
     a = 15
@@ -71,12 +72,14 @@ def main():
     c = a - b
 
     # Print the value of variables and results of operations
-    print('Arithmetic Operations:')
-    print(f'a = {a}')
-    print(f'b = {b}')
-    print(f'c = a - b = {c}')
-    print(f'c * 5 = {c * 5}\n')
-
+    print(
+        'Arithmetic Operations:\n'
+        f'{a = }\n'
+        f'{b = }\n'
+        f'c = a - b = {c}\n'
+        f'{c * 5 = }\n'
+    )
+    
     # More arithmetic operations with reassignment
     x = 5
     y = 3 * x
@@ -97,12 +100,20 @@ def main():
     # Division operations
     a = 20
     b = 30
-    c = b / a    # Floating-point division
-    d = b // a   # Integer (floor) division
-    print('Division Operations:')
-    print(f'b / a = {c}')
-    print(f'b // a = {d}')
-    print(f'b / a + b // a = {c + d}\n')
+    
+    print (
+        'Division Operations:\n'
+        f'{b / a = }\n'             # Floating-point division
+        f'{b // a = }\n'            # Integer (floor) division
+        f'{b / a + b // a = }\n'    # PEMDAS order example
+    )
+  
+
+
+
+
+
+
 
     # Modulus operation with integers
     a = 80
