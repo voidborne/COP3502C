@@ -53,74 +53,88 @@ def fetch_data(url: str) -> dict:
         return {}
 '''
 
-def main():
-
-    # Print a greeting message
-    print('Hello World.\n')
-
-    # Print a message with nested quotes
-    print('''They said, "It's raining" today.\n''')
-
-    # Assign a string to a variable and print it
+# Function to print greeting messages
+def greeting():
     my_name = 'Garry Scott'
-    
-    print(f'My name is {my_name}.\n\n')
+    print(
+        '\n'
+        f'''Hello World. My name is {my_name}. Let's check out a few "functions".\n'''
+        '\n'
+        )
 
-    # Perform basic arithmetic operations
+# Function to demonstrate basic arithmetic operations
+def arithmetic_operations():
     a = 15
     b = 5
     c = a - b
-
-    # Print the value of variables and results of operations
     print(
         'Arithmetic Operations:\n'
+        '\n'
         f'{a = }\n'
         f'{b = }\n'
-        f'c = a - b = {c}\n'
+        f'c = {c = }\n'
         f'{c * 5 = }\n'
+        '\n'
     )
-    
-    # More arithmetic operations with reassignment
+
+# Function to demonstrate more complex arithmetic operations with reassignment
+def more_arithmetic_operations():
     x = 5
     y = 3 * x
     x = y - 5
     y = 2 * x
+    print(
+        'More Arithmetic Operations:\n'
+        '\n'
+        f'{x = }\n'
+        f'{y = }\n'
+        f'{x + y = }\n'
+        '\n'
+    )
 
-    # Print the sum of x and y
-    print('More Arithmetic Operations:')
-    print(f'x = {x}')
-    print(f'y = {y}')
-    print(f'x + y = {x + y}\n')
+# Function to demonstrate modulus operation with floating point numbers
+def modulus_floating_point():
+    a = 45
+    b = 3.67
+    print(
+        'Modulus Operation with Floating Point:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-    # Modulus operation with a floating point number
-    test = 45 % 3.67
-    print('Modulus Operation with Floating Point:')
-    print(f'45 % 3.67 = {test}\n')
-
-    # Division operations
+# Function to demonstrate various division operations
+def division_operations():
     a = 20
     b = 30
-    
-    print (
+    print(
         'Division Operations:\n'
-        f'{b / a = }\n'             # Floating-point division
-        f'{b // a = }\n'            # Integer (floor) division
-        f'{b / a + b // a = }\n'    # PEMDAS order example
+        '\n'
+        f'{b / a = }\n'
+        f'{b // a = }\n'
+        f'{b / a + b // a = }\n'
+        '\n'
     )
-  
 
-
-
-
-
-
-
-    # Modulus operation with integers
+# Function to demonstrate modulus operation with integers
+def modulus_integers():
     a = 80
     b = 90
-    print('Modulus Operation with Integers:')
-    print(f'80 % 90 = {a % b}')
+    print(
+        'Modulus Operation with Integers:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-# The entry point for the program
+# The main function that calls all other functions to execute the script
+def main():
+    greeting()
+    arithmetic_operations()
+    more_arithmetic_operations()
+    modulus_floating_point()
+    division_operations()
+    modulus_integers()
+
 if __name__ == '__main__':
     main()

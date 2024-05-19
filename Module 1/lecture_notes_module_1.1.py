@@ -9,63 +9,88 @@ Date: 2024-05-15
 Note on variable naming conventions - Always start a variable name with a letter, not a number. And no special charactors.
 '''
 
-def main():
-
-    # Print a greeting message
-    print('Hello World\n')
-
-    # Print a message with nested quotes
-    print('''They said, "It's raining".''')
-
-    # Assign a string to a variable and print it
+# Function to print greeting messages
+def greeting():
     my_name = 'Garry Scott'
-    print(f'\nMy name is: {my_name}\n')
+    print(
+        '\n'
+        f'''Hello World. My name is {my_name}. Let's check out a few "functions".\n'''
+        '\n'
+        )
 
-    # Perform basic arithmetic operations
+# Function to demonstrate basic arithmetic operations
+def arithmetic_operations():
     a = 15
     b = 5
     c = a - b
+    print(
+        'Arithmetic Operations:\n'
+        '\n'
+        f'{a = }\n'
+        f'{b = }\n'
+        f'c = {c = }\n'
+        f'{c * 5 = }\n'
+        '\n'
+    )
 
-    # Print the value of variables and results of operations
-    print('Arithmetic Operations:')
-    print(f'a = {a}')
-    print(f'b = {b}')
-    print(f'c = a - b = {c}')
-    print(f'c * 5 = {c * 5}\n')
-
-    # More arithmetic operations with reassignment
+# Function to demonstrate more complex arithmetic operations with reassignment
+def more_arithmetic_operations():
     x = 5
     y = 3 * x
     x = y - 5
     y = 2 * x
+    print(
+        'More Arithmetic Operations:\n'
+        '\n'
+        f'{x = }\n'
+        f'{y = }\n'
+        f'{x + y = }\n'
+        '\n'
+    )
 
-    # Print the sum of x and y
-    print('More Arithmetic Operations:')
-    print(f'x = {x}')
-    print(f'y = {y}')
-    print(f'x + y = {x + y}\n')
+# Function to demonstrate modulus operation with floating point numbers
+def modulus_floating_point():
+    a = 45
+    b = 3.67
+    print(
+        'Modulus Operation with Floating Point:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-    # Modulus operation with a floating point number
-    test = 45 % 3.67
-    print('Modulus Operation with Floating Point:')
-    print(f'45 % 3.67 = {test}\n')
-
-    # Division operations
+# Function to demonstrate various division operations
+def division_operations():
     a = 20
     b = 30
-    c = b / a    # Floating-point division
-    d = b // a   # Integer (floor) division
-    print('Division Operations:')
-    print(f'b / a = {c}')
-    print(f'b // a = {d}')
-    print(f'b / a + b // a = {c + d}\n')
+    print(
+        'Division Operations:\n'
+        '\n'
+        f'{b / a = }\n'
+        f'{b // a = }\n'
+        f'{b / a + b // a = }\n'
+        '\n'
+    )
 
-    # Modulus operation with integers
+# Function to demonstrate modulus operation with integers
+def modulus_integers():
     a = 80
     b = 90
-    print('Modulus Operation with Integers:')
-    print(f'80 % 90 = {a % b}')
+    print(
+        'Modulus Operation with Integers:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-# The entry point for the program
+# The main function that calls all other functions to execute the script
+def main():
+    greeting()
+    arithmetic_operations()
+    more_arithmetic_operations()
+    modulus_floating_point()
+    division_operations()
+    modulus_integers()
+
 if __name__ == '__main__':
     main()
