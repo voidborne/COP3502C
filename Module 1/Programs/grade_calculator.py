@@ -58,6 +58,28 @@ Functions
     Input_Grade_Function
 
 '''
+grade_type = input('Enter a number for grade type:\n 1 for quiz\n 2 for lab\n 3 project\n 4 for final project\n 5 for exam\n').strip()
+
+def quiz_grade():
+    pass
+
+def lab_grade():
+    pass
+
+def exam_grade():
+    pass
+
+def project_grade():
+    pass
+
+def final_project_grade():
+    pass
+
+def extra_credit_grade():
+    pass
+
+
+'''
 import tkinter as tk
 
 root = tk.Tk()
@@ -68,3 +90,4 @@ root.geometry('880x440')
 root.configure(bg='#333333')
 
 root.mainloop()
+'''

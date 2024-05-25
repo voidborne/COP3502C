@@ -1,54 +1,104 @@
 '''
-Module 1 - Lecture Notes 2 
+Module 1 - Lecture Notes 1 
 Description: Examples and notes from class
 Author: Garry Scott
-Date: 2024-05-17
+Date: 2024-05-15
 '''
 
-
-
-var = 'Garry'
-var2 = 32
-
-
 '''
-sep and end will motify the spaces and end of strings
+Note on variable naming conventions - Always start a variable name with a letter, not a number. And no special charactors.
 '''
 
+a = 15
+b = 5 
+c = a - b
+print('The sum of a and b is', c)
+c = a + b
+print('The value of a is', a, 'and the value of b is', b, 'and the sum of a and b is', c)
 
-print('My name is', var, sep = '****')
 
-print('My name is', var, 'And my age is', var2, sep = '****')
+# Function to print greeting messages
+def greeting():
+    my_name = 'Garry Scott'
+    print(
+        '\n'
+        f'''Hello World. My name is {my_name}. Let's check out a few "functions".\n'''
+        '\n'
+        )
 
-print('My name is', var, 'And my age is', var2, sep = '****', end = '!')
-x = 3.2
-print(x)
+# Function to demonstrate basic arithmetic operations
+def arithmetic_operations():
+    a = 15
+    b = 5
+    c = a - b
+    print(
+        'Arithmetic Operations:\n'
+        '\n'
+        f'{a = }\n'
+        f'{b = }\n'
+        f'c = {c = }\n'
+        f'{c * 5 = }\n'
+        '\n'
+    )
 
-print(type(round(x)))
+# Function to demonstrate more complex arithmetic operations with reassignment
+def more_arithmetic_operations():
+    x = 5
+    y = 3 * x
+    x = y - 5
+    y = 2 * x
+    print(
+        'More Arithmetic Operations:\n'
+        '\n'
+        f'{x = }\n'
+        f'{y = }\n'
+        f'{x + y = }\n'
+        '\n'
+    )
 
-# Grade calculator
+# Function to demonstrate modulus operation with floating point numbers
+def modulus_floating_point():
+    a = 45
+    b = 3.67
+    print(
+        'Modulus Operation with Floating Point:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-score = 98
+# Function to demonstrate various division operations
+def division_operations():
+    a = 20
+    b = 30
+    print(
+        'Division Operations:\n'
+        '\n'
+        f'{b / a = }\n'
+        f'{b // a = }\n'
+        f'{b / a + b // a = }\n'
+        '\n'
+    )
 
-print(f'The final score is: {score}')
+# Function to demonstrate modulus operation with integers
+def modulus_integers():
+    a = 80
+    b = 90
+    print(
+        'Modulus Operation with Integers:\n'
+        '\n'
+        f'{a % b = }\n'
+        '\n'
+    )
 
-pi = 3.14159
-print(f'The value of pi is {pi:.2f}')
+# The main function that calls all other functions to execute the script
+def main():
+    greeting()
+    arithmetic_operations()
+    more_arithmetic_operations()
+    modulus_floating_point()
+    division_operations()
+    modulus_integers()
 
-a = 20
-b = 5
-c = 4
-
-x = b+a/b*c+c-b
-print(x)
-print(type(x))
-
-x = (a + b *c)/a
-print(2 * x + 5)
-
-a = 20
-b = 23 // 4
-c = b + 7
-d = c % 10
-
-print(d)
+if __name__ == '__main__':
+    main()

@@ -1,34 +1,60 @@
 '''
-
-Mutability
-
+Module 1 - Lecture Notes 3 
+Description: Examples and notes from class
+Author: Garry Scott
+Date: 2024-05-17
 '''
 
-total = float(input('Enter the total: '))
+a = 15
+b = 5 
+c = a - b
+print('The sum of a and b is', c)
+c = a + b
+print('The value of a is', a, 'and the value of b is', b, 'and the sum of a and b is', c)
 
-if total > 90:
-    print('A Grade')
-elif total > 80:
-    print('B Grade')
-elif 70 < total < 79:
-    print('C Grade')
-else:
-    print('Work harder next time')
 
-item_1 = 2.50
-item_2 = 3.75
-item_3 = 4.25
+var = 'Garry'
+var2 = 32
 
-highest_cost_item = ''
 
-def highest_price():
-    if item_1 > item_2 and item_1 > item_3:
-        highest_cost_item = item_1
-    elif item_2 > item_1 and item_2 > item_3:
-        highest_cost_item = item_2
-    else:
-        highest_cost_item = item_3
-    print(highest_cost_item)
+'''
+sep and end will motify the spaces and end of strings
+'''
 
-highest_price()
 
+print('My name is', var, sep = '****')
+
+print('My name is', var, 'And my age is', var2, sep = '****')
+
+print('My name is', var, 'And my age is', var2, sep = '****', end = '!')
+x = 3.2
+print(x)
+
+print(type(round(x)))
+
+# Grade calculator
+
+score = 98
+
+print(f'The final score is: {score}')
+
+pi = 3.14159
+print(f'The value of pi is {pi:.2f}')
+
+a = 20
+b = 5
+c = 4
+
+x = b+a/b*c+c-b
+print(x)
+print(type(x))
+
+x = (a + b * c) / a
+print(2 * x + 5)
+
+a = 20
+b = 23 // 4
+c = b + 7
+d = c % 10
+
+print(d)
