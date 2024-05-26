@@ -1,47 +1,31 @@
-
-def celsius_to_fahrenheit(celsius_temp):
-    fahrenheit_temp = celsius_temp * 1.8 + 32
-    return fahrenheit_temp
-
-def prompt_user_for_temperature():
-    while True:
-        try:
-            user_input_str = input('Please input a temperature: ').strip()
-            if user_input_str.lower() == 'exit':
-                print('Goodbye')
-                break
-            celsius_temp = float(user_input_str)
-            fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
-            print(f'The tmp is {fahrenheit_temp:.1f}!')
-        except ValueError:
-            print('Invalid input')
-        except KeyboardInterrupt:
-            print('Goodbye')
-            break
-
-def main():
-    prompt_user_for_temperature()
-
-if __name__ == '__main__':
-    main()
-
 '''
+Lab1_A
+Description: Celsius to Fahrenheit Converter
+Author: Garry Scott
+Date: 2024-05-25
+'''
+
 def celsius_to_fahrenheit(celsius_temp):
     fahrenheit_temp = celsius_temp * 1.8 + 32
     return fahrenheit_temp
 
 def prompt_user_for_temperature():
+    
     while True:
         try:
             user_input_str = input('Enter the temperature in Celsius (or type "exit" to quit): ').strip()
             if user_input_str.lower() == 'exit':
                 print('Goodbye World!')
                 break
+            
             celsius_temp = float(user_input_str)
             fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
+            
             print(f'That is {fahrenheit_temp:.1f} degrees Fahrenheit!')
+        
         except ValueError:
             print('Invalid input. Please enter a numeric value.')
+        
         except KeyboardInterrupt:
             print('\nGoodbye World!')
             break
@@ -51,7 +35,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-'''
 
 '''
 #Unit Test
