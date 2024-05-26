@@ -14,6 +14,14 @@ def sales_tax_calculation(item_price, sales_tax_percentage):
     return sales_tax_amount
 
 def prompt_user_for_item_price_and_sales_tax():
+    user_item_price_input_str = input('Enter the price of the item: ')
+    item_price = float(user_item_price_input_str)
+    user_sales_tax_percentage_input_str = input('Enter the sales tax percentage: ')
+    sales_tax_percentage = float(user_sales_tax_percentage_input_str) / 100
+    sales_tax = sales_tax_calculation(item_price, sales_tax_percentage)
+    total_price = total_price_with_tax(item_price, sales_tax)
+    print(f'Your total is ${total_price:.2f}')
+''' 
     while True:
         try:
             user_item_price_input_str = input('Enter the price of the item (or type "exit" to quit): ').strip()
@@ -22,7 +30,7 @@ def prompt_user_for_item_price_and_sales_tax():
                 break
             item_price = float(user_item_price_input_str)
 
-            user_sales_tax_percentage_input_str = input('Enter the sales tax percentage (or typr "exit" to quit): ').strip()
+            user_sales_tax_percentage_input_str = input('Enter the sales tax percentage (or typr=e "exit" to quit): ').strip()
             if user_sales_tax_percentage_input_str.lower() == 'exit':
                 print("Goodbye World!")
                 break
@@ -39,7 +47,7 @@ def prompt_user_for_item_price_and_sales_tax():
         except KeyboardInterrupt:
             print('\nGoodbye World!')
             break
-
+'''
 def main():
     prompt_user_for_item_price_and_sales_tax()
 

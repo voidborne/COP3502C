@@ -10,7 +10,12 @@ def celsius_to_fahrenheit(celsius_temp):
     return fahrenheit_temp
 
 def prompt_user_for_temperature():
-    
+    user_input_str = input('Enter the temperature in Celsius: ')
+    celsius_temp = float(user_input_str)
+    fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
+    print(f'That is {fahrenheit_temp:.1f} degrees Fahrenheit!')
+
+'''  
     while True:
         try:
             user_input_str = input('Enter the temperature in Celsius (or type "exit" to quit): ').strip()
@@ -29,7 +34,7 @@ def prompt_user_for_temperature():
         except KeyboardInterrupt:
             print('\nGoodbye World!')
             break
-
+'''
 def main():
     prompt_user_for_temperature()
 
