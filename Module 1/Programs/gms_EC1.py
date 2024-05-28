@@ -89,9 +89,7 @@ def main():
         total_cost = ticket_cost_calculator(movie_choice, showtime, adult_tickets, child_tickets)
         
         if total_cost is not None:
-            total_cost_str = f'{total_cost:.2f}'
-            total_cost_str = total_cost_str.rstrip('0').rstrip('.')
-            print(f'${total_cost_str}')
+            print(f'Total cost: ${total_cost:.2f}')
     
 if __name__ == '__main__':
     main()
