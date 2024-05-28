@@ -48,7 +48,7 @@ def ticket_cost_calculator(movie_choice, showtime, adult_tickets, child_tickets)
 def prompt_user_for_movie_selection_and_tickets():
     print(
         'Available movies today:\n'
-        'A)12 String:     1)2:30    2)4:40   3)7:50   4)10:50\n'
+        'A)12 Strong:     1)2:30    2)4:40   3)7:50   4)10:50\n'
         'B)Coco:          1)12:40   2)3:45\n'
         'C)The Post:      1)12:45   2)3:35   3)7:05   4)9:55'
         )
