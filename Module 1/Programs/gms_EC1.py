@@ -87,9 +87,11 @@ def main():
     else:
         movie_choice, showtime, adult_tickets, child_tickets = user_input
         total_cost = ticket_cost_calculator(movie_choice, showtime, adult_tickets, child_tickets)
-        
+        total_cost_str = f'{total_cost:.2f}'
+        total_cost_str = total_cost_str.rstrip('0')
+
         if total_cost is not None:
-            print(f'Total cost: ${total_cost:.2f}')
+            print(f'Total cost: ${total_cost_str}')
     
 if __name__ == '__main__':
     main()
