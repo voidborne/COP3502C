@@ -5,15 +5,46 @@ Author: Garry Scott
 Date: 2024-05-27
 '''
 
-ticket_cost = [
-    ['adult', {'pre_2pm' : True}],
-    ['adult', {'pre_2pm' : False}],
-    ['child', {'pre_2pm' : True}], 
-    ['child', {'pre_2pm' : False}]
-]
+# Global Data Structures
+showtime_list = {
+    'A1' : 'post_2pm',
+    'A2' : 'post_2pm',
+    'A3' : 'post_2pm',
+    'A4' : 'post_2pm',
+    'B1' : 'pre_2pm',
+    'B2' : 'post_2pm', 
+    'C1' : 'pre_2pm',  
+    'C2' : 'post_2pm',
+    'C3' : 'post_2pm',
+    'C4' : 'post_2pm'
+}
 
-print(ticket_cost[1][1]['pre_2pm'])
+adult_price_list = {
+    'pre_2pm' : 11.17,
+    'post_2pm' : 12.45
+}
 
+child_price_list = {
+    'pre_2pm' : 8.00,
+    'post_2pm' : 9.68
+}
+
+# Calculate cost of tickets
+def ticket_cost_calculator(movie_choice, showtime, adult_tickets, child_tickets):
+    price_status_key = f'{movie_choice}{showtime}'
+    
+    if price_status_key not in showtime_list:
+        print('Invalid option; please restart app...')
+        return None
+
+    price_status = showtime_list[price_status_key]
+    adult_price = adult_price_list[price_status]
+    child_price = child_price_list[price_status]
+    total_cost = adult_price * adult_tickets + child_price * child_tickets
+    
+    return total_cost
+
+# Take user input
 def prompt_user_for_movie_selection_and_tickets():
     print(
         'Available movies today:\n'
@@ -24,18 +55,43 @@ def prompt_user_for_movie_selection_and_tickets():
 
     user_input_movie_choice_str = input('Movie choice: ').strip()
     movie_choice = user_input_movie_choice_str.upper()
+    #if movie_choice not in {'A', 'B', 'C'}:
+        #print('Invalid option; please restart app...')
+        #return None
 
     user_input_showtime_str = input('Showtime: ').strip()
     showtime = int(user_input_showtime_str)
+    if f'{movie_choice}{showtime}' not in showtime_list:
+        print('Invalid option; please restart app...')
+        return None
 
     user_input_adult_tickets_str = input('Adult tickets: ').strip()
     adult_tickets = int(user_input_adult_tickets_str)
+    if adult_tickets > 30:
+        print('Invalid option; please restart app...')
+        return None
 
-    user_input_child_tickets_str = input('Child tickets: ').strip()
+    user_input_child_tickets_str = input('Kid tickets: ').strip()
     child_tickets = int(user_input_child_tickets_str)
+    if (adult_tickets + child_tickets) > 30:
+        print('Invalid option; please restart app...')
+        return None
 
+    return movie_choice, showtime, adult_tickets, child_tickets
+
+# Main function
 def main():
-    prompt_user_for_movie_selection_and_tickets()
-
+    
+    user_input = prompt_user_for_movie_selection_and_tickets()
+    
+    if user_input is None:
+        return
+    
+    else:
+        movie_choice, showtime, adult_tickets, child_tickets = user_input
+        total_cost = ticket_cost_calculator(movie_choice, showtime, adult_tickets, child_tickets)
+        if total_cost is not None:
+            print(f'Total cost: ${total_cost:.2f}')
+    
 if __name__ == '__main__':
     main()
