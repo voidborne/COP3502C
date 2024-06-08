@@ -20,9 +20,9 @@ def sum_of_calculations(calculation_sum, calculation_result):
     return calculation_sum
 
 def format_result(calculation_result):
-    calculation_result = f"{calculation_result:.2f}"
+    calculation_result = f'{calculation_result:.2f}'
     if calculation_result[-1] == '0':
-        calculation_result = f"{calculation_result:.1f}"
+        calculation_result = f'{calculation_result:.1f}'
     return float(calculation_result)
 
 def calculator(user_input_int, operand_1, operand_2):
@@ -88,15 +88,15 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
             operand_2 = get_valid_operand('Enter second operand: ', calculation_result)
             new_result = calculator(user_input_int, operand_1, operand_2)
             if new_result is not None:
-                calculation_result = format_result(new_result)
+                calculation_result = format_result(calculation_result)
                 calculation_sum = sum_of_calculations(calculation_sum, calculation_result)
                 calculation_num = calculation_counter(calculation_num)
-                print(f'Current Result: {calculation_result:.2f}')
+                print(f'Current Result: {calculation_result}')
         elif user_input_int == 7:
             if calculation_num != 0:
                 calculation_avg = average_calculator(calculation_sum, calculation_num)
                 print(
-                    f'\nSum of calculations: {calculation_sum}\n'
+                    f'Sum of calculations: {calculation_sum}\n'
                     f'Number of calculations: {calculation_num}\n'
                     f'Average of calculations: {calculation_avg}\n'
                 )
