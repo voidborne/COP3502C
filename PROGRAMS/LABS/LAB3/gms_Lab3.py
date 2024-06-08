@@ -43,7 +43,6 @@ def calculator(user_input_int, operand_1, operand_2):
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
     while True:
         print(
-            '\n'
             f'Current Result: {calculation_result}\n'
             '\n'
             'Calculator Menu\n'
@@ -77,9 +76,9 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
             if calculation_num != 0:
                 calculation_avg = average_calculator(calculation_sum, calculation_num)
                 print(
-                    f'Sum of calculations: {calculation_sum}\n'
+                    f'Sum of calculations: {calculation_sum:.2f}\n'
                     f'Number of calculations: {calculation_num}\n'
-                    f'Average of calculations: {calculation_avg}\n'
+                    f'Average of calculations: {calculation_avg:.2f}\n'
                 )
             else:
                 print('Error: No calculations yet to average!')
