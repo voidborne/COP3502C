@@ -39,42 +39,46 @@ def calculator(user_input_int, operand_1, operand_2):
             return None
         return math.log(operand_2, operand_1)
 
-def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
+def get_valid_operand(prompt, calculation_result):
     while True:
-        print(
-            f'Current Result: {calculation_result}\n'
-            '\n'
-            'Calculator Menu\n'
-            '---------------\n'
-            '0. Exit Program\n'
-            '1. Addition\n'
-            '2. Subtraction\n'
-            '3. Multiplication\n'
-            '4. Division\n'
-            '5. Exponentiation\n'
-            '6. Logarithm\n'
-            '7. Display Average\n'
-            '\n'
-        )
+        user_input = input(prompt)
+        if user_input == 'RESULT':
+            return calculation_result
+        else:
+            return float(user_input)
+
+def display_menu():
+    print(
+        'Calculator Menu\n'
+        '---------------\n'
+        '0. Exit Program\n'
+        '1. Addition\n'
+        '2. Subtraction\n'
+        '3. Multiplication\n'
+        '4. Division\n'
+        '5. Exponentiation\n'
+        '6. Logarithm\n'
+        '7. Display Average\n'
+        '\n'
+    )
+
+def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
+    display_menu()
+    while True:
+        print(f'Current Result: {calculation_result}\n')
 
         while True:
-            try:
-                user_input_int = int(input('Enter Menu Selection: '))
-                if user_input_int not in range(0, 7+1):
-                    print('Error: Invalid selection!')
-                else:
-                    break
-            except ValueError:
+            user_input_int = int(input('Enter Menu Selection: '))
+            if user_input_int not in range(0, 7+1):
                 print('Error: Invalid selection!')
-
+            else:
+                break
         if user_input_int == 0:
             print('Thanks for using this calculator. Goodbye!')
             break
         elif user_input_int in range(1, 6+1):
-            operand_1_input = input('Enter first operand: ')
-            operand_2_input = input('Enter second operand: ')
-            operand_1 = calculation_result if operand_1_input == 'RESULT' else float(operand_1_input)
-            operand_2 = calculation_result if operand_2_input == 'RESULT' else float(operand_2_input)
+            operand_1 = get_valid_operand('Enter first operand: ', calculation_result)
+            operand_2 = get_valid_operand('Enter second operand: ', calculation_result)
             new_result = calculator(user_input_int, operand_1, operand_2)
             if new_result is not None:
                 calculation_result = new_result
