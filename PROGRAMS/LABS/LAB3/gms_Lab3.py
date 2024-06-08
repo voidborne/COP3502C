@@ -32,7 +32,7 @@ def calculator(user_input_int, operand_1, operand_2):
         return operand_1 * operand_2
     elif user_input_int == 4:
         if operand_2 == 0:
-            print('Error: Division by zero!')
+            print('Error: Invalid Input!')
             return None
         return operand_1 / operand_2
     elif user_input_int == 5:
