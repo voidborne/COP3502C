@@ -15,9 +15,10 @@ def average_calculator(calculation_sum, calculation_num):
     if calculation_num == 0:
         return 0
     calculation_avg = calculation_sum / calculation_num
-    calculation_avg = f'{calculation_avg:.2f}'
-    if calculation_avg[-1] == '0':
+    calculation_avg_str = f'{calculation_avg:.2f}'
+    if calculation_avg_str[-1] == '0':
         calculation_avg = f'{calculation_avg:.1f}'
+    calculation_avg = calculation_avg_str
     return calculation_avg
 
 def sum_of_calculations(calculation_sum, new_result):
@@ -75,6 +76,8 @@ def display_menu(calculation_result):
     )
 
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, calculation_avg):
+    display_menu(calculation_result)  
+    
     while True:
         user_input_int = int(input('Enter Menu Selection: '))
         
@@ -82,7 +85,6 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, 
             print('Thanks for using this calculator. Goodbye!')
             break
         elif user_input_int in range(1, 6+1):
-            display_menu(calculation_result)  # Display menu for arithmetic operations
             operand_1 = get_valid_operand('Enter first operand: ', calculation_result)
             operand_2 = get_valid_operand('Enter second operand: ', calculation_result)
             new_result = calculator(user_input_int, operand_1, operand_2)
@@ -92,6 +94,7 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, 
                 calculation_num = calculation_counter(calculation_num)
                 calculation_result = formatted_result
                 print(f'Current Result: {calculation_result}')
+            display_menu(calculation_result)  
         elif user_input_int == 7:
             if calculation_num != 0:
                 formatted_avg = average_calculator(calculation_sum, calculation_num)
@@ -101,10 +104,10 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, 
                     f'Average of calculations: {formatted_avg}\n'
                 )
             else:
-                print('Error: No calculations yet to average!')
+                print('Error: No calculations yet to average!')  
         else:
             print('Error: Invalid selection!')
-            display_menu(calculation_result) 
+ 
 
 def main():
     calculation_result = 0.0
