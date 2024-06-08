@@ -65,7 +65,7 @@ def display_menu():
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
     display_menu()
     while True:
-        print(f'Current Result: {calculation_result}\n')
+        print(f'Current Result: {calculation_result}')
 
         while True:
             user_input_int = int(input('Enter Menu Selection: '))
