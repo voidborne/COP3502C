@@ -75,17 +75,14 @@ def display_menu(calculation_result):
     )
 
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, calculation_avg):
+    display_menu(calculation_result)  # Display menu initially
+    
     while True:
-        display_menu(calculation_result)
+        user_input_int = int(input('Enter Menu Selection: '))
         
-        while True:
-            user_input_int = int(input('Enter Menu Selection: '))
-            if user_input_int not in range(0, 7+1):
-                print('Error: Invalid selection!')
-            else:
-                break
-
-        if user_input_int == 0:
+        if user_input_int not in range(0, 7+1):
+            print('Error: Invalid selection!')
+        elif user_input_int == 0:
             print('Thanks for using this calculator. Goodbye!')
             break
         elif user_input_int in range(1, 6+1):
@@ -108,12 +105,14 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, 
                 )
             else:
                 print('Error: No calculations yet to average!')
+        else:
+            continue
 
 def main():
     calculation_result = 0.0
     calculation_sum = 0.0
     calculation_num = 0
-    calculation_avg = 0  # Initialize calculation_avg
+    calculation_avg = 0  
     prompt_user_for_input(calculation_result, calculation_sum, calculation_num, calculation_avg)
 
 if __name__ == '__main__':
