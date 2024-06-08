@@ -22,7 +22,7 @@ def sum_of_calculations(calculation_sum, calculation_result):
 def format_result(calculation_result):
     calculation_result = f"{calculation_result:.2f}"
     if calculation_result[-1] == '0':
-        calculation_result = f"{result:.1f}"
+        calculation_result = f"{calculation_result:.1f}"
     return float(calculation_result)
 
 def calculator(user_input_int, operand_1, operand_2):
