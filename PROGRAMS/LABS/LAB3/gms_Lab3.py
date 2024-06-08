@@ -47,8 +47,10 @@ def get_valid_operand(prompt, calculation_result):
         else:
             return float(user_input)
 
-def display_menu():
+def display_menu(calculation_result):
     print(
+        f'\nCurrent Result: {calculation_result:.2f}\n'
+        '\n'
         'Calculator Menu\n'
         '---------------\n'
         '0. Exit Program\n'
@@ -59,20 +61,19 @@ def display_menu():
         '5. Exponentiation\n'
         '6. Logarithm\n'
         '7. Display Average\n'
-        '\n'
     )
 
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
-    display_menu()
     while True:
-        print(f'Current Result: {calculation_result}')
-
+        display_menu(calculation_result)
+        
         while True:
             user_input_int = int(input('Enter Menu Selection: '))
             if user_input_int not in range(0, 7+1):
                 print('Error: Invalid selection!')
             else:
                 break
+
         if user_input_int == 0:
             print('Thanks for using this calculator. Goodbye!')
             break
@@ -84,12 +85,12 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
                 calculation_result = new_result
                 calculation_sum = sum_of_calculations(calculation_sum, calculation_result)
                 calculation_num = calculation_counter(calculation_num)
-                print(f'Current Result: {calculation_result}')
+                print(f'Current Result: {calculation_result:.2f}')
         elif user_input_int == 7:
             if calculation_num != 0:
                 calculation_avg = average_calculator(calculation_sum, calculation_num)
                 print(
-                    f'Sum of calculations: {calculation_sum:.2f}\n'
+                    f'\nSum of calculations: {calculation_sum:.2f}\n'
                     f'Number of calculations: {calculation_num}\n'
                     f'Average of calculations: {calculation_avg:.2f}\n'
                 )
