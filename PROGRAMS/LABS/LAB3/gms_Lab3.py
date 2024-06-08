@@ -20,10 +20,10 @@ def sum_of_calculations(calculation_sum, calculation_result):
     return calculation_sum
 
 def format_result(calculation_result):
-    calculation_result = f'{calculation_result:.2f}'
-    if calculation_result[-1] == '0':
-        calculation_result = f'{calculation_result:.1f}'
-    return float(calculation_result)
+    formatted_result = f'{calculation_result:.2f}'
+    if formatted_result[-1] == '0':
+        formatted_result = f'{calculation_result:.1f}'
+    return float(formatted_result)
 
 def calculator(user_input_int, operand_1, operand_2):
     if user_input_int == 1:
@@ -88,9 +88,10 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
             operand_2 = get_valid_operand('Enter second operand: ', calculation_result)
             new_result = calculator(user_input_int, operand_1, operand_2)
             if new_result is not None:
-                calculation_result = format_result(calculation_result)
+                formatted_result = format_result(new_result)
                 calculation_sum = sum_of_calculations(calculation_sum, calculation_result)
                 calculation_num = calculation_counter(calculation_num)
+                calculation_result = formatted_result
                 print(f'Current Result: {calculation_result}')
         elif user_input_int == 7:
             if calculation_num != 0:
