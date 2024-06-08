@@ -12,11 +12,16 @@ def calculation_counter(calculation_num):
     return int(calculation_num)
 
 def average_calculator(calculation_sum, calculation_num):
+    if calculation_num == 0:
+        return 0
     calculation_avg = calculation_sum / calculation_num
+    calculation_avg = f'{calculation_avg:.2f}'
+    if calculation_avg[-1] == '0':
+        calculation_avg = f'{calculation_avg:.1f}'
     return calculation_avg
 
-def sum_of_calculations(calculation_sum, calculation_result):
-    calculation_sum += calculation_result
+def sum_of_calculations(calculation_sum, new_result):
+    calculation_sum += new_result
     return calculation_sum
 
 def format_result(calculation_result):
@@ -69,7 +74,7 @@ def display_menu(calculation_result):
         '7. Display Average\n'
     )
 
-def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
+def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, calculation_avg):
     while True:
         display_menu(calculation_result)
         
@@ -89,17 +94,17 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
             new_result = calculator(user_input_int, operand_1, operand_2)
             if new_result is not None:
                 formatted_result = format_result(new_result)
-                calculation_sum = sum_of_calculations(calculation_sum, calculation_result)
+                calculation_sum = sum_of_calculations(calculation_sum, new_result)
                 calculation_num = calculation_counter(calculation_num)
                 calculation_result = formatted_result
                 print(f'Current Result: {calculation_result}')
         elif user_input_int == 7:
             if calculation_num != 0:
-                calculation_avg = average_calculator(calculation_sum, calculation_num)
+                formatted_avg = average_calculator(calculation_sum, calculation_num)
                 print(
                     f'Sum of calculations: {calculation_sum}\n'
                     f'Number of calculations: {calculation_num}\n'
-                    f'Average of calculations: {calculation_avg}\n'
+                    f'Average of calculations: {formatted_avg}\n'
                 )
             else:
                 print('Error: No calculations yet to average!')
@@ -108,7 +113,8 @@ def main():
     calculation_result = 0.0
     calculation_sum = 0.0
     calculation_num = 0
-    prompt_user_for_input(calculation_result, calculation_sum, calculation_num)
+    calculation_avg = 0  # Initialize calculation_avg
+    prompt_user_for_input(calculation_result, calculation_sum, calculation_num, calculation_avg)
 
 if __name__ == '__main__':
     main()
