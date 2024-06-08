@@ -61,7 +61,7 @@ def get_valid_operand(prompt, calculation_result):
 
 def display_menu(calculation_result):
     print(
-        f'\nCurrent Result: {calculation_result}\n'
+        f'Current Result: {calculation_result}\n'
         '\n'
         'Calculator Menu\n'
         '---------------\n'
