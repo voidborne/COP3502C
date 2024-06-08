@@ -7,13 +7,9 @@ Date: 2024-06-04
 
 import math
 
-calculation_result = 0.0
-calculation_sum = 0.0
-calculation_num = 0
-
 def calculation_counter(calculation_num):
     calculation_num += 1
-    return calculation_num
+    return int(calculation_num)
 
 def average_calculator(calculation_sum, calculation_num):
     calculation_avg = calculation_sum / calculation_num
@@ -38,6 +34,9 @@ def calculator(user_input_int, operand_1, operand_2):
     elif user_input_int == 5:
         return operand_1 ** operand_2
     elif user_input_int == 6:
+        if operand_1 <= 0 or operand_1 == 1 or operand_2 <= 0:
+            print('Error: Invalid Input!')
+            return None
         return math.log(operand_2, operand_1)
 
 def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
@@ -57,11 +56,21 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
             '7. Display Average\n'
             '\n'
         )
-        user_input_int = int(input('Enter Menu Selection: '))
+
+        while True:
+            try:
+                user_input_int = int(input('Enter Menu Selection: '))
+                if user_input_int not in range(0, 7+1):
+                    print('Error: Invalid selection!')
+                else:
+                    break
+            except ValueError:
+                print('Error: Invalid selection!')
+
         if user_input_int == 0:
             print('Thanks for using this calculator. Goodbye!')
             break
-        elif user_input_int in range(1, 7):
+        elif user_input_int in range(1, 6+1):
             operand_1_input = input('Enter first operand: ')
             operand_2_input = input('Enter second operand: ')
             operand_1 = calculation_result if operand_1_input == 'RESULT' else float(operand_1_input)
@@ -82,11 +91,11 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
                 )
             else:
                 print('Error: No calculations yet to average!')
-        else:
-            print('Error: Invalid selection!')
 
 def main():
-    global calculation_result, calculation_sum, calculation_num
+    calculation_result = 0.0
+    calculation_sum = 0.0
+    calculation_num = 0
     prompt_user_for_input(calculation_result, calculation_sum, calculation_num)
 
 if __name__ == '__main__':
