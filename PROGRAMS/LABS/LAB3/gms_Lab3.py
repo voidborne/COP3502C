@@ -93,7 +93,6 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num, 
                 calculation_sum = sum_of_calculations(calculation_sum, new_result)
                 calculation_num = calculation_counter(calculation_num)
                 calculation_result = formatted_result
-                print(f'Current Result: {calculation_result}')
             display_menu(calculation_result)  
         elif user_input_int == 7:
             if calculation_num != 0:
