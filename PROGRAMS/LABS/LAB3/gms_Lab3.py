@@ -49,7 +49,7 @@ def get_valid_operand(prompt, calculation_result):
 
 def display_menu(calculation_result):
     print(
-        f'\nCurrent Result: {calculation_result:.2f}\n'
+        f'\nCurrent Result: {calculation_result:.1f}\n'
         '\n'
         'Calculator Menu\n'
         '---------------\n'
@@ -85,14 +85,14 @@ def prompt_user_for_input(calculation_result, calculation_sum, calculation_num):
                 calculation_result = new_result
                 calculation_sum = sum_of_calculations(calculation_sum, calculation_result)
                 calculation_num = calculation_counter(calculation_num)
-                print(f'Current Result: {calculation_result:.2f}')
+                print(f'Current Result: {calculation_result:.1f}')
         elif user_input_int == 7:
             if calculation_num != 0:
                 calculation_avg = average_calculator(calculation_sum, calculation_num)
                 print(
-                    f'\nSum of calculations: {calculation_sum:.2f}\n'
+                    f'\nSum of calculations: {calculation_sum:.1f}\n'
                     f'Number of calculations: {calculation_num}\n'
-                    f'Average of calculations: {calculation_avg:.2f}\n'
+                    f'Average of calculations: {calculation_avg:.1f}\n'
                 )
             else:
                 print('Error: No calculations yet to average!')
