@@ -45,7 +45,7 @@ def get_another_card():
     
     if player_hand == 21:
         print("\nBLACKJACK! You win!")
-        global player_wins
+        global player_wins, games_played
         player_wins += 1
         games_played += 1
         main(games_played)
