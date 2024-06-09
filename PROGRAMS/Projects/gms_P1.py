@@ -107,7 +107,6 @@ def prompt_user_for_input():
         elif user_input_int == 3:
             print_statistics()
         elif user_input_int == 4:
-            print("\nExiting the game...")
             exit()
         else:
             print(
