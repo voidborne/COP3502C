@@ -1,7 +1,10 @@
 '''
+Module 1 - Lecture Notes 4 
+Description: Examples and notes from class
+Author: Garry Scott
+Date: 2024-05-15
 
 Mutability
-
 '''
 
 total = float(input('Enter the total: '))
