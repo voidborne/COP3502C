@@ -111,14 +111,14 @@ def prompt_user_for_input():
         else:
             print(
                 'Invalid input!\n'
-                'Please enter an integer value between 1 and 4'
+                'Please enter an integer value between 1 and 4.'
             )
             menu()
             prompt_user_for_input()
     except ValueError:
         print(
             'Invalid input!\n'
-            'Please enter an integer value between 1 and 4'
+            'Please enter an integer value between 1 and 4.'
         )
         menu()
         prompt_user_for_input()
