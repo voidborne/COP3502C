@@ -128,7 +128,7 @@ def main(game_count):
     global games_played, player_hand
     while True:
         player_hand = 0
-        print(f"\nSTART GAME #{games_played}")
+        print(f"\nSTART GAME #{games_played + 1}")
         
         # Deal the first card to the player
         card_num = rng.next_int(13) + 1
