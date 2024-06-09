@@ -47,18 +47,20 @@ def get_another_card():
         print("\nBLACKJACK! You win!")
         global player_wins
         player_wins += 1
+        games_played += 1
         main(games_played)
     elif player_hand > 21:
         print("\nYou exceeded 21! You lose.")
         global dealer_wins
         dealer_wins += 1
+        games_played += 1
         main(games_played)
     else:
         menu()
         prompt_user_for_input()
 
 def hold_hand():
-    global player_hand, dealer_wins, player_wins, ties
+    global player_hand, dealer_wins, player_wins, ties, games_played
     dealer_hand = rng.next_int(11) + 16
     print(f"\nDealer's hand: {dealer_hand}")
     print(f"Your hand is: {player_hand}")
@@ -66,15 +68,19 @@ def hold_hand():
     if dealer_hand > 21:
         print("\nYou win!")
         player_wins += 1
+        games_played += 1
     elif dealer_hand == player_hand:
         print("\nIt's a tie! No one wins!")
         ties += 1
+        games_played += 1
     elif dealer_hand > player_hand:
         print("\nDealer wins!")
         dealer_wins += 1
+        games_played += 1
     else:
         print("\nYou win!")
         player_wins += 1
+        games_played += 1
     
     main(games_played)
 
@@ -121,7 +127,6 @@ def prompt_user_for_input():
 def main(game_count):
     global games_played, player_hand
     while True:
-        games_played += 1
         player_hand = 0
         print(f"\nSTART GAME #{games_played}")
         
@@ -131,7 +136,6 @@ def main(game_count):
         player_hand += card_value_num
         print(f"Your card is a {card_name}!")
         print(f"Your hand is: {player_hand}")
-        
         menu()
         prompt_user_for_input()
 
