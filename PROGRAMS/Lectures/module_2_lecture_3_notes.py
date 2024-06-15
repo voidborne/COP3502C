@@ -1,5 +1,5 @@
 '''
-Module 1 - Lecture Notes 3 
+Module 2 - Lecture 3 Notes 
 Description: Examples and notes from class
 Author: Garry Scott
 Date: 2024-05-17
