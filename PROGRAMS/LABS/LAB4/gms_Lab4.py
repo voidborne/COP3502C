@@ -30,11 +30,10 @@ def is_prime(p):
             return False
     return True
 
-def print_prime_factors(num):
+def get_prime_factors(num):
     if num <= 1:
-        return
+        return []
 
-    original_num = num
     factors_list = []
     divisor = 2
     while num > 1:
@@ -43,7 +42,15 @@ def print_prime_factors(num):
             num //= divisor
         divisor += 1
 
-    print(f"{original_num} = ", end="")
+    return factors_list
+
+def print_prime_factors(num):
+    factors_list = get_prime_factors(num)
+    if not factors_list:
+        print(f"No prime factors for {num}")
+        return
+    
+    print(f"{num} = ", end="")
     first = True
     for factor in factors_list:
         if first:
@@ -58,26 +65,21 @@ def prompt_user_for_input():
     p = int(input('Pick a number to check if it is prime: '))
     f = int(input('Pick a number to find its prime factors: '))
     return n, p, f
-'''
+
 def main():
     n, p, f = prompt_user_for_input()
     fib_num = fibonacci(n)
     prime_num = is_prime(p)
     print(f"The {n}th Fibonacci number is: {fib_num}")
-    print(f"Is {p} a prime number? {'Yes' if prime_num else 'No'}")
+    print(f"Is {p} a prime number? {True if prime_num else False}")
     print_prime_factors(f)
-'''
-
-def main():
-    '''
-    n, p, f = prompt_user_for_input()
-    fib_num = fibonacci(n)
-    prime_num = is_prime(p)
-    print_prime_factors(f)
-    '''
+    
+    
+    #Test
     print(fibonacci(25) == 46368)
     print(is_prime(-2) == False)
-    print(print_prime_factors(2475))
+    print_prime_factors(2475)
+    print(get_prime_factors(2475) == sorted([3, 5, 5, 11, 3]))
 
 if __name__ == '__main__':
     main()
