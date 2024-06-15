@@ -58,7 +58,7 @@ def prompt_user_for_input():
     p = int(input('Pick a number to check if it is prime: '))
     f = int(input('Pick a number to find its prime factors: '))
     return n, p, f
-
+'''
 def main():
     n, p, f = prompt_user_for_input()
     fib_num = fibonacci(n)
@@ -66,6 +66,18 @@ def main():
     print(f"The {n}th Fibonacci number is: {fib_num}")
     print(f"Is {p} a prime number? {'Yes' if prime_num else 'No'}")
     print_prime_factors(f)
+'''
+
+def main():
+    '''
+    n, p, f = prompt_user_for_input()
+    fib_num = fibonacci(n)
+    prime_num = is_prime(p)
+    print_prime_factors(f)
+    '''
+    print(fibonacci(25) == 46368)
+    print(is_prime(-2) == False)
+    print(print_prime_factors(2475))
 
 if __name__ == '__main__':
     main()
