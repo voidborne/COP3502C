@@ -1,4 +1,2 @@
-a = 4
-while a <= 46:
-    a = a * a
-print(a)
+message = "Hi, welcome to Chili's"
+print(message[-5:2:-2])
