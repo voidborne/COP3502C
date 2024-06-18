@@ -1,5 +1,5 @@
 '''
-Lab3
+Project 1
 Description: Project 1 - Blackjack Game
 Author: Garry Scott
 Date: 2024-06-07
